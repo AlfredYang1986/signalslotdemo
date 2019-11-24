@@ -1,0 +1,9 @@
+{{#if showCp}}
+    {{cp-test-one ssc="ssc" emit="emit" disconnect="disconnect"}}
+{{/if}}
+{{cp-test-one ssc="ssc" emit="emit" disconnect="disconnect"}}
+{{!-- {{cp-test-two ssc="ssc" emit="emit" }} --}}
+<button onClick={{action "toggleShowCp"}}>distroyComp</button>
+{{#link-to "frank-comp"}}
+    frank comp
+{{/link-to}}

@@ -1,8 +1,14 @@
-import Component from '@ember/component';
-import { A } from '@ember/array';
+import Component from "@ember/component"
+import { A } from "@ember/array"
 
-export default Component.extend({
+export default Component.extend( {
 	didInsertElement() {
-		this.sendAction("ssc", A([]), A([]), A([]))
+		this.set( "mstc",[A( [] ), A( [] ), A( [] )] )
+
+		this.sendAction( "ssc", A( [] ), A( [] ), A( [] ) )
 	},
-});
+	willDestroyElement() {
+		this.sendAction( "disconnect" , ...this.mstc )
+		// this._super( ...arguments )
+	  }
+} )
